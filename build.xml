@@ -36,4 +36,15 @@
 
     <target name="main" depends="clean,run"/>
 
+	<target name="deploy" description="deploy to tomcat">
+		<echo>deploying from client</echo>
+		<deploy 
+			url="${http://localhost:8090/}"
+			username="${admin}"
+			password="${admin}"
+			path="/${project-name}"
+			jar="file:/${jar.dir}/${ant.project.name}.jar"
+		/>
+	</target>  	
+
 </project>
